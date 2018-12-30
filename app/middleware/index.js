@@ -6,6 +6,7 @@ const
 module.exports = exports = Router({ mergeParams: true })
 
 	.use(require('./log'))
+	.use(require('./cors'))
 	.use(require('./body-parser'))
 	.use(require('./auth'))
 	.use(require('./pagination'));

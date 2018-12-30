@@ -16,6 +16,7 @@ module.exports = exports = Router({ mergeParams: true })
 	)
 
 	.all('/',
-		async () => {
+		async (req, res) => {
+			res.setHeader('Allow', 'GET, HEAD, OPTIONS');
 			throw new ApiError('method-not-allowed', 'Method not allowed.', 405);
 		});
